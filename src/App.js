@@ -4,6 +4,8 @@ import { Provider, useDispatch} from 'react-redux';
 import { store } from './store/store';
 import { getForecast } from './store/actions/getForecastAction';
 import { getWeather } from './store/actions/getWeatherAction';
+import { CCityCard } from './components/cityCard/cityCard';
+
 
 
 store.subscribe(() => console.log(store.getState()));
@@ -25,7 +27,7 @@ function App() {
 
   return (
 
-      <></>
+    <CCityCard/>
 
   );
 }
