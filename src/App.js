@@ -26,9 +26,12 @@ function App() {
   }, []);
 
   return (
+    <div className="App">
+        <CCityCard/>
+        <div className='app_info_inner'>
 
-    <CCityCard/>
-
+        </div>
+    </div>
   );
 }
 

@@ -1,17 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloud, faClock } from "@fortawesome/free-solid-svg-icons";
-
+import './cityCard.style.css'
 import { connect } from "react-redux";
+import { iconWeather } from "../../utils/imgFunc";
+
 
 const CityCard = ({weather}) => {
     return(
         <div className="card ">
             
-            <img width={'250px'} height={'250px'}  alt="weather in city" className="card_image"/>
+            <img width={'250px'} height={'250px'} src={(iconWeather(Array.isArray(weather.weather) ? weather?.weather[0]?.main : 'other'))} alt="weather in city" className="card_image"/>
             <div className='card_inner'>
-                <p className="card_degrees"> '10°C'</p>
+                <p className="card_degrees">{(weather?.main?.temp && Math.round(weather?.main?.temp) + '°C') || '10°C'}</p>
                 <div className="card_city">
-                    <p>name</p>
+                    <p>{weather?.name}</p>
                     <p>time</p>
                 </div>
                 <hr/>

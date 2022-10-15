@@ -1,0 +1,31 @@
+.card {
+    width: 450px;
+    height: 96vh;
+    border-radius: 3%;
+    padding: 2rem 3rem;
+    background-color: white;
+    margin-right: 10px;
+  }
+  .card_inner{
+    width: 100%;
+  }
+  .card_image{
+    width: 250px;
+    height: 250px;
+  }
+  .card_city{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+  .card_degrees {
+    font-size: 65px;
+    font-weight: 100;
+    margin-bottom: 35px;
+  }
+  p{
+    margin: 10px;
+  }
+
+  
