@@ -4,6 +4,7 @@ import './cityCard.style.css'
 import { connect } from "react-redux";
 import { iconWeather } from "../../utils/imgFunc";
 import { localTime } from "../../utils/getLocalTime";
+import { SearchBar } from "../searchBar/searchBar";
 
 
 
@@ -11,7 +12,9 @@ const CityCard = ({weather}) => {
     let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return(
         <div className="card ">
-            
+             <div className="card_search">
+                <SearchBar/>
+            </div>
             <img width={'250px'} height={'250px'} src={(iconWeather(Array.isArray(weather.weather) ? weather?.weather[0]?.main : 'other'))} alt="weather in city" className="card_image"/>
             <div className='card_inner'>
                 <p className="card_degrees">{(weather?.main?.temp && Math.round(weather?.main?.temp) + '°C') || '10°C'}</p>

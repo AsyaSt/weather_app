@@ -1,0 +1,15 @@
+.search form {
+    background-color: rgb(243 244 246/var(--tw-bg-opacity));
+  }
+  .search input, .search button {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .search input {
+    width: 100%;
+    height: 42px;
+    padding: 15px;
+  }
