@@ -3,9 +3,12 @@ import { faCloud, faClock } from "@fortawesome/free-solid-svg-icons";
 import './cityCard.style.css'
 import { connect } from "react-redux";
 import { iconWeather } from "../../utils/imgFunc";
+import { localTime } from "../../utils/getLocalTime";
+
 
 
 const CityCard = ({weather}) => {
+    let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return(
         <div className="card ">
             
@@ -14,7 +17,7 @@ const CityCard = ({weather}) => {
                 <p className="card_degrees">{(weather?.main?.temp && Math.round(weather?.main?.temp) + '°C') || '10°C'}</p>
                 <div className="card_city">
                     <p>{weather?.name}</p>
-                    <p>time</p>
+                    <p>{daysOfWeek[localTime(weather?.timezone).getDay()] + ',  ' + localTime(weather?.timezone).getDate() + ' ' + localTime(weather?.timezone).toLocaleString('en-EN', { month: 'long' })}</p>
                 </div>
                 <hr/>
                 <div className="df">
@@ -23,7 +26,7 @@ const CityCard = ({weather}) => {
                 </div>
                 <div className="df">
                     <FontAwesomeIcon width={30} color={"darkBlue"} icon={faClock}/>
-                    <p className="card_city">time</p>
+                    <p className="card_city">{(localTime(weather?.timezone).getHours() ) + ':' + ((localTime(weather?.timezone).getMinutes() > 9) ? localTime(weather?.timezone).getMinutes() : ('0' + localTime(weather?.timezone).getMinutes()))}</p>
                 </div>  
             </div>
         </div>
