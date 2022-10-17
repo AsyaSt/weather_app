@@ -6,6 +6,7 @@ import { getForecast } from './store/actions/getForecastAction';
 import { getWeather } from './store/actions/getWeatherAction';
 import { CCityCard } from './components/cityCard/cityCard';
 import { CForecast } from './components/weekForecast';
+import { CWeatherHigtLigts } from './components/weatherConditions/weatherCondition';
 
 
 
@@ -31,6 +32,7 @@ function App() {
         <CCityCard/>
         <div className='app_info_inner'>
           <CForecast/>
+          <CWeatherHigtLigts/>
         </div>
     </div>
   );
