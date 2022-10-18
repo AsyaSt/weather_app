@@ -2,7 +2,7 @@
   -----------
 Weather app.
 
-You can see it there - [tap it](https://app.netlify.com/sites/celadon-alfajores-0357b3/overview)
+You can see it there - [tap it](https://celadon-alfajores-0357b3.netlify.app/)
 
 Get accurate weather forecast for any place in the world. 
 Real-time weather data includes current temperature, humidity, wind speed and cloud cover. 
