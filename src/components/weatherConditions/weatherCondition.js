@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-
+import './weatherConditions.styles.css'
 
 
 export const TodayCondition = ({name, info, src}) => {

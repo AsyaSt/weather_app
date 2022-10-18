@@ -1,0 +1,35 @@
+.highlights{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 35px 0 35px 0 ;
+  }
+  .conditions_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .condition{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    width: 30%;
+    height: 240px;
+    border-radius: 3%;
+    background-color: white;
+  }
+  .condition_name{
+    width: 100%;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175/var(--tw-text-opacity));
+    font-size: 1.3rem;
+  }
+  .condition_info{
+    font-size: 2rem;
+  }
+  .condition_image{
+    width: 40%;
+  }
+  
