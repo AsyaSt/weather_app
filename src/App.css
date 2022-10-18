@@ -23,3 +23,12 @@ body{
   flex-direction: column;
   position: relative;
 }
+
+@media (max-width: 800px) { 
+  .App{
+    flex-direction: column;
+  }
+  .app_info_inner{
+    width: 100%;
+  }
+}

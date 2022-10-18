@@ -28,4 +28,32 @@
     margin: 10px;
   }
 
+
+  @media (max-width: 800px) { 
+    .card {
+      width: 100%;
+      height: auto;
+    }
+    .card_container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card_image{
+      width: 150px;
+      height: 150px;
+    }
+    .card_degrees {
+        text-align: right   ;
+    }
+  }
+  @media (max-width: 400px) {
+    .card_container{
+      align-items:flex-start;
+      flex-direction: column;
+    }
+    .card_city{
+      font-size: 16px;
+    }
+  }
   

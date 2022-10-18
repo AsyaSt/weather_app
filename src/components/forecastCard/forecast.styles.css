@@ -44,3 +44,11 @@
     line-height: 1rem;
   }
 
+  @media (max-width: 360px) { 
+    .forecast{
+      width: 120px;
+    }
+    .forecast_inner{
+      padding: 10px 20px;
+    }
+  }

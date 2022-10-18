@@ -15,9 +15,14 @@ const CityCard = ({weather}) => {
              <div className="card_search">
                 <SearchBar/>
             </div>
-            <img width={'250px'} height={'250px'} src={(iconWeather(Array.isArray(weather.weather) ? weather?.weather[0]?.main : 'other'))} alt="weather in city" className="card_image"/>
-            <div className='card_inner'>
+            <div className="card_container">
+                <img  className="card_image" width={'250px'} height={'250px'} 
+                    src={(iconWeather((Array.isArray(weather.weather) ? weather?.weather[0]?.main : 'other'), weather?.timezone, weather?.sys?.sunrise, weather?.sys?.sunset, localTime(weather?.timezone).getHours()))} 
+                    alt="weather in city"
+                />
                 <p className="card_degrees">{(weather?.main?.temp && Math.round(weather?.main?.temp) + '°C') || '10°C'}</p>
+            </div>            
+            <div className='card_inner'>
                 <div className="card_city">
                     <p>{weather?.name}</p>
                     <p>{daysOfWeek[localTime(weather?.timezone).getDay()] + ',  ' + localTime(weather?.timezone).getDate() + ' ' + localTime(weather?.timezone).toLocaleString('en-EN', { month: 'long' })}</p>
