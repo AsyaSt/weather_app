@@ -7,7 +7,6 @@ import { localTime } from "../../utils/getLocalTime";
 import { SearchBar } from "../searchBar/searchBar";
 
 
-
 const CityCard = ({weather}) => {
     let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return(
