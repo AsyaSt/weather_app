@@ -23,16 +23,16 @@ const AppWrapper = () => {
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getWeather('paris'));
-    dispatch(getForecast('paris'));
+    dispatch(getWeather('kyiv'));
+    dispatch(getForecast('kyiv'));
   }, []);
 
   return (
     <div className="App">
         <CCityCard/>
         <div className='app_info_inner'>
-          <CForecast/>
-          <CWeatherHigtLigts/>
+          {/* <CForecast/>
+          <CWeatherHigtLigts/> */}
         </div>
     </div>
   );

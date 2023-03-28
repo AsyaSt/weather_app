@@ -5,37 +5,35 @@ import { connect } from "react-redux";
 import { iconWeather } from "../../utils/imgFunc";
 import { localTime } from "../../utils/getLocalTime";
 import { SearchBar } from "../searchBar/searchBar";
+import bgimage from '../../images/background.jpg'
+import houseImage from '../../images/house.png'
 
 
 const CityCard = ({weather}) => {
     let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return(
         <div className="card ">
-             <div className="card_search">
+             {/* <div className="card_search">
                 <SearchBar/>
-            </div>
+            </div> */}
             <div className="card_container">
-                <img  className="card_image" width={'250px'} height={'250px'} 
-                    src={(iconWeather((Array.isArray(weather.weather) ? weather?.weather[0]?.main : 'other'), weather?.timezone, weather?.sys?.sunrise, weather?.sys?.sunset, localTime(weather?.timezone).getHours()))} 
-                    alt="weather in city"
-                />
-                <p className="card_degrees">{(weather?.main?.temp && Math.round(weather?.main?.temp) + '°C') || '10°C'}</p>
-            </div>            
-            <div className='card_inner'>
-                <div className="card_city">
-                    <p>{weather?.name}</p>
-                    <p>{daysOfWeek[localTime(weather?.timezone).getDay()] + ',  ' + localTime(weather?.timezone).getDate() + ' ' + localTime(weather?.timezone).toLocaleString('en-EN', { month: 'long' })}</p>
-                </div>
-                <hr/>
-                <div className="df">
-                    <FontAwesomeIcon width={30} color={"darkBlue"} icon={faCloud}/>
-                    <p className="card_city">{Array.isArray(weather.weather) ? weather?.weather[0]?.main : ''}</p>
-                </div>
-                <div className="df">
-                    <FontAwesomeIcon width={30} color={"darkBlue"} icon={faClock}/>
-                    <p className="card_city">{(localTime(weather?.timezone).getHours() ) + ':' + ((localTime(weather?.timezone).getMinutes() > 9) ? localTime(weather?.timezone).getMinutes() : ('0' + localTime(weather?.timezone).getMinutes()))}</p>
+                <div className="card_inner">
+                    <div className="card_text">
+                        <p className="card_city">{weather?.name}</p>
+                        <p className="card_degrees">{(weather?.main?.temp && Math.round(weather?.main?.temp) + '°') || '10°C'}</p>
+                        <p className="card_desc">{Array.isArray(weather.weather) ? weather?.weather[0]?.main : ''}</p>
+                        <p className="card_max-min">H:{(weather?.main?.temp_max && Math.round(weather?.main?.temp_max) + '° ') || '10°'} L:{(weather?.main?.temp_min && Math.round(weather?.main?.temp_min) + '°') || '10°C'}</p>
+                    </div>
+                    <div className="card_house-image">
+                        <img src={houseImage}/>      
+                    </div> 
+                    
+                </div> 
+                <div className="card_background">
+                        <img src={bgimage}/>
                 </div>  
             </div>
+            
         </div>
     )
 }
