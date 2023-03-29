@@ -1,0 +1,54 @@
+.allcity_inner {
+    padding: 20px;
+}
+
+.widget{
+    margin-top: 20px;
+    position: relative;
+}
+
+.widget_inner {
+    padding: 59px 4px 20px 20px;
+    height: 184px;
+    border-radius: 30px;
+    clip-path: polygon(9% 0, 100% 43%, 100% 100%, 0 100%, 0 0);
+    background: linear-gradient(90deg, #5936B4 0%, #362A84 103.55%);
+}
+
+.widget_image {
+    position: absolute;
+    right: 0;
+    top: -12px;
+    z-index: 33;
+}
+
+.widget_image-desc {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    margin-right: 24px;
+    text-align: right;
+}
+
+.widget_degree {
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 41px;
+    letter-spacing: 0.374px;
+    color: #FFFFFF;
+}
+
+.widget_max-min {
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;    
+    letter-spacing: -0.078px;
+    color: rgba(235, 235, 245, 0.6);
+}
+
+.widget_city {
+    margin-top: 5px;
+    font-size: 18px;
+
+}

@@ -1,10 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloud, faClock } from "@fortawesome/free-solid-svg-icons";
 import './cityCard.style.css'
 import { connect } from "react-redux";
-import { iconWeather } from "../../utils/imgFunc";
-import { localTime } from "../../utils/getLocalTime";
-import { SearchBar } from "../searchBar/searchBar";
 import bgimage from '../../images/background.jpg'
 import houseImage from '../../images/house.png'
 
