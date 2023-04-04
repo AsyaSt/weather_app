@@ -7,7 +7,7 @@ import { getWeather } from './store/actions/getWeatherAction';
 import { CCityCard } from './components/cityCard/cityCard';
 import { CForecast } from './components/weekForecast';
 import { CWeatherHigtLigts } from './components/weatherConditions/weatherCondition';
-import { AllCityPage } from './pages/allCityPage';
+import { AllCityPage } from './pages/allCityPage/allCityPage';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
@@ -27,8 +27,8 @@ const Main = () => {
   return (
   <BrowserRouter history = {history}>
     <Routes>
-      <Route  path="/" element={<AllCityPage/>} />
-      <Route  path="/a" element={<CCityCard/>} />
+      <Route  path="/" element={<CCityCard/>} />
+      <Route  path="/a" element={<AllCityPage/>} />
     </Routes>
   </BrowserRouter>)
 }

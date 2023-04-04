@@ -13,8 +13,8 @@ body{
   /* align-items: center; */
 }
 .App{
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
 }
 .app_info_inner{
   height: 100%;

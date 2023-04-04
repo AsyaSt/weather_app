@@ -12,19 +12,20 @@ export const SearchBar = () => {
     return(
         <div className="search">
             <form action="/" method="get" className="df">
+                <button type="submit" onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(getWeather(value));
+                    dispatch(getForecast(value));
+                    setValue('');
+                }}>
+                    <FontAwesomeIcon icon={faSearch} />
+                </button>
                 <input type="text"
                     id="header-search"
                     placeholder="Search for city"
                     value={value} onChange={e => setValue(e.target.value)}
                 />
-                <button type="submit" onClick={(e) => {
-                        e.preventDefault();
-                        dispatch(getWeather(value));
-                        dispatch(getForecast(value));
-                        setValue('');
-                    }}>
-                    <FontAwesomeIcon icon={faSearch} />
-                </button>
+                
             </form>
         </div>
     )

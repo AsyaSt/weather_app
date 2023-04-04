@@ -1,0 +1,29 @@
+.allcity-header {
+    padding: 9px 9px 9px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.allcity-header__back {
+    display: flex;
+    align-items: center;
+}
+
+.allcity-header__back-text {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.364px;
+    color: #FFFFFF;
+    margin-left: 5px;
+}
+
+.allcity-header__menu {
+    width: 33px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+}
+
+
