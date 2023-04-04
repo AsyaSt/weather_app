@@ -15,7 +15,7 @@ export const WidgetCityCard = () => {
                 </div>
             </div>
             <div className='widget_image'>
-                <img src={windCloud}/>
+                <img src={windCloud} alt='weather'/>
                 <p className='widget_image-desc'>Mid Rain</p>
             </div>
         </div>

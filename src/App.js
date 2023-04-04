@@ -8,8 +8,10 @@ import { CCityCard } from './components/cityCard/cityCard';
 import { CForecast } from './components/weekForecast';
 import { CWeatherHigtLigts } from './components/weatherConditions/weatherCondition';
 import { AllCityPage } from './pages/allCityPage';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
-
+const history = createBrowserHistory();
 
 store.subscribe(() => console.log(store.getState()));
 
@@ -21,6 +23,16 @@ const AppWrapper = () => {
   )
 }
 
+const Main = () => {
+  return (
+  <BrowserRouter history = {history}>
+    <Routes>
+      <Route  path="/" element={<AllCityPage/>} />
+      <Route  path="/a" element={<CCityCard/>} />
+    </Routes>
+  </BrowserRouter>)
+}
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -30,14 +42,13 @@ function App() {
 
   return (
     <div className="App">
-        {/* <CCityCard/> */}
-        <AllCityPage/>
+        <Main/>
         <div className='app_info_inner'>
-          {/* <CForecast/>
-          <CWeatherHigtLigts/> */}
         </div>
     </div>
   );
 }
+
+
 
 export default AppWrapper;
