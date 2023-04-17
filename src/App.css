@@ -3,13 +3,13 @@ body{
     background-color: rgb(243 244 246/var(--tw-bg-opacity));
 }
 .df{
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 .dfa{
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
   /* align-items: center; */
 }
 .App{
@@ -17,18 +17,18 @@ body{
   justify-content: space-around; */
 }
 .app_info_inner{
-  height: 100%;
+  /* height: 100%;
   width: 60%;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: relative; */
 }
 
 @media (max-width: 800px) { 
   .App{
-    flex-direction: column;
+    /* flex-direction: column; */
   }
   .app_info_inner{
-    width: 100%;
+    /* width: 100%; */
   }
 }

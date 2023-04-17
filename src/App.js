@@ -10,6 +10,7 @@ import { CWeatherHigtLigts } from './components/weatherConditions/weatherConditi
 import { AllCityPage } from './pages/allCityPage/allCityPage';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import { MainPage } from './pages/mainpage/mainPage';
 
 const history = createBrowserHistory();
 
@@ -27,7 +28,7 @@ const Main = () => {
   return (
   <BrowserRouter history = {history}>
     <Routes>
-      <Route  path="/" element={<CCityCard/>} />
+      <Route  path="/" element={<MainPage/>} />
       <Route  path="/a" element={<AllCityPage/>} />
     </Routes>
   </BrowserRouter>)
