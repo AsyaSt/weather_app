@@ -55,6 +55,7 @@
     display: flex;
     column-gap: 16px;
     margin: 19px 0 10px 20px;
+    border-radius: 44px;
 }
 
 .forecast__item {
@@ -95,19 +96,67 @@
     overflow: hidden;
     position: relative;
     height: 88px;
-    background: linear-gradient(180deg, rgba(58, 58, 106, 0.26) 0%, rgba(37, 36, 76, 0.26) 100%);
-    border: 0.5px solid rgba(117, 130, 244, 0.5);
-    /* backdrop-filter: blur(25px); */
+    width: 100%;
     border-radius: 0 0 44px 44px;
 
 }
 
+.forecast__bottom::before {
+    content: '';
+    position: absolute;
+    height: 88px;
+    width: 100%;
+    clip-path: polygon(50% 26%, 80% 13%, 100% 0, 100% 100%, 0 100%, 0 0, 20% 13%);
+    display: block;
+    background: linear-gradient(180deg, rgba(58, 58, 106, 0.26) 0%, rgba(37, 36, 76, 0.26) 100%);
+    border: 0.5px solid rgba(117, 130, 244, 0.5);
 
-.forecast__bottom-subtract {
-    /* position: absolute; */
-    z-index: 4;
-    width: 258px;
-    height: 100px;
-    top: -5px;
-    
+}
+
+.forecast__bottom-inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    z-index: 6;
+}
+.forecast__bottom-inner * {
+    z-index: 6;
+}
+
+.forecast__bottom-menu, .forecast__bottom-nav {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forecast__bottom-plus {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(139.71deg, rgba(0, 0, 0, 0.4) 19.24%, rgba(255, 255, 255, 0.304) 86.09%);
+    filter: blur(0.5px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.forecast__bottom-plus::before {
+    content: "";
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background: linear-gradient(144.91deg, #F5F5F9 18.06%, #DADFE7 85.87%);
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.5), 10px 10px 20px rgba(13, 20, 49, 0.5), inset 1px 1px 0.5px #FFFFFF;
+    border-radius: 50%;
+    z-index: 9;
+}
+
+.forecast__bottom-plus img {
+    z-index: 15;
 }

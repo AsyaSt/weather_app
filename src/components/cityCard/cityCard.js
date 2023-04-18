@@ -17,7 +17,8 @@ const CityCard = ({weather}) => {
                         <p className="card_max-min">H:{(weather?.main?.temp_max && Math.round(weather?.main?.temp_max) + '° ') || '10°'} L:{(weather?.main?.temp_min && Math.round(weather?.main?.temp_min) + '°') || '10°C'}</p>
                     </div>
                     <div className="card_house-image">
-                        <img src={houseImage} alt='house'/>      
+                        <img src={houseImage} alt='house'/>     
+
                     </div> 
                     
                 </div> 

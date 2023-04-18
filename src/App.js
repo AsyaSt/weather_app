@@ -29,7 +29,7 @@ const Main = () => {
   <BrowserRouter history = {history}>
     <Routes>
       <Route  path="/" element={<MainPage/>} />
-      <Route  path="/a" element={<AllCityPage/>} />
+      <Route  path="/saved-cities" element={<AllCityPage/>} />
     </Routes>
   </BrowserRouter>)
 }
@@ -43,6 +43,9 @@ function App() {
 
   return (
     <div className="App">
+
+
+    
         <Main/>
         <div className='app_info_inner'>
         </div>
