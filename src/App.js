@@ -11,6 +11,7 @@ import { AllCityPage } from './pages/allCityPage/allCityPage';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { MainPage } from './pages/mainpage/mainPage';
+import { WeatherDetailsAll } from './components/weatherDetails/WeatherDetails';
 
 const history = createBrowserHistory();
 
@@ -29,6 +30,7 @@ const Main = () => {
   <BrowserRouter history = {history}>
     <Routes>
       <Route  path="/" element={<MainPage/>} />
+      <Route  path="/weather-details" element={<WeatherDetailsAll/>} />
       <Route  path="/saved-cities" element={<AllCityPage/>} />
     </Routes>
   </BrowserRouter>)
