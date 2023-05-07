@@ -15,7 +15,14 @@
     position: relative;
 }
 
-.forecast__head-shape {
+/* .card_house-image {
+    position: absolute;
+    width: 100%;
+    top: -200px;
+    z-index: -1;
+    border-radius: 44px;
+  } */
+/* .forecast__head-shape {
     margin-top: 9px;
     width: 48px;
     height: 5px;
@@ -23,7 +30,7 @@
     margin-right: auto;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-}
+} */
 
 .forecast__head-switch {
     display: flex;
@@ -40,7 +47,7 @@
 
 .forecast__head-separator {
     position: absolute;
-    width: 390px;
+    width: 100%;
     height: 0px;
     bottom: 0px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -97,7 +104,7 @@
     position: relative;
     height: 88px;
     width: 100%;
-    border-radius: 0 0 44px 44px;
+    /* border-radius: 0 0 44px 44px; */
 
 }
 

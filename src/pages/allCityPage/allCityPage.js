@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { SearchBar } from '../../components/searchBar/searchBar'
 
 
+
 export const AllCityPage = () => {
     return (
         <>

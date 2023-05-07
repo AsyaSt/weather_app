@@ -5,12 +5,16 @@ import plus from '../../images/plus.png'
 import menu from '../../images/menu.png'
 import nav from '../../images/nav.png'
 import { Link } from 'react-router-dom';
+import houseImage from '../../images/house.png'
 
 export const Forecast = () => {
     return (
         <div className='forecast'>
             <div className='forecast__head'>
-                <div className='forecast__head-shape'></div>
+                {/* <div className="card_house-image">
+                    <img src={houseImage} alt='house'/>     
+                </div>  */}
+                {/* <div className='forecast__head-shape'></div> */}
 
                 <div className='forecast__head-switch'>
                     <p>Hourly Forecast</p>

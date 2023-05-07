@@ -45,9 +45,8 @@ function App() {
 
   return (
     <div className="App">
-
-
-    
+            <div class="stars"></div>
+            <div class="twinkling"></div>
         <Main/>
         <div className='app_info_inner'>
         </div>

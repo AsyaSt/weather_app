@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .allcity-header__back {
@@ -25,5 +26,3 @@
     display: flex;
     align-items: center;
 }
-
-

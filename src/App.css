@@ -13,9 +13,10 @@ body{
   /* align-items: center; */
 }
 .App{
-  /* display: flex;
-  justify-content: space-around; */
+  position: relative;
 }
+
+
 .app_info_inner{
   /* height: 100%;
   width: 60%;

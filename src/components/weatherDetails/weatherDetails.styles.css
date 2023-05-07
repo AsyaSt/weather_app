@@ -1,8 +1,7 @@
 .weather-details-page {
     padding: 30px;
     height: 100vh;
-    background: radial-gradient(95.47% 71.89% at 93.07% 74.31%, #45278B 0%, #2E335A 100%);
-    box-shadow: 0px 20px 100px rgba(74, 57, 127, 0.7), inset 0px 1px 0px #FFFFFF;
+    position: relative;
 }
 
 .weather-details-aqi {

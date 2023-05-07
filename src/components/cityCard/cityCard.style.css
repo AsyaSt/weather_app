@@ -1,51 +1,8 @@
 
   @media (max-width: 800px) { 
-    /* .card {
-      width: 100%;
-      height: auto;
-    }
-    .card_container{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .card_image{
-      width: 150px;
-      height: 150px;
-    }
-    .card_degrees {
-        text-align: right   ;
-    }
-  }
-  @media (max-width: 400px) {
-    .card_container{
-      align-items:flex-start;
-      flex-direction: column;
-    }
-    .card_city{
-      font-size: 16px;
-    } */
-
-
-    
     .card {
       position: relative;
       display: block;
-    }
-
-    .card_background {
-      overflow: hidden;
-      width: 100%;
-      height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      border-radius: 44px;
-    }
-
-    .card_background img {
-      width: 100%;
       height: 100%;
     }
 
@@ -55,12 +12,12 @@
       position: absolute;
       top: 0;
       left: 0;
+      
     }
 
     .card_inner {
       margin-top: 100px;
       z-index: 4;
-      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -105,13 +62,6 @@
       line-height: 24px;
 
       letter-spacing: 0.38px;
-    }
-
-    .card_house-image {
-      width: 100%;
-      margin-top: 23px;
-      z-index: 3;
-      border-radius: 44px;
     }
 
     .card_house-image img {

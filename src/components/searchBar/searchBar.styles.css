@@ -8,7 +8,7 @@
   margin: 8px 16px 0 16px;
   display: flex;
   align-items: center;
-
+  position: relative;
 }
 
 .search input, .search button {
@@ -29,8 +29,18 @@
 .search input {
   width: 100%;
   height: 42px;
+  color: white;
 }
 
 .search input::placeholder {
   color: rgba(235, 235, 245, 0.367);
+}
+
+
+.search input:target{
+  background: linear-gradient(168.44deg, rgba(46, 51, 90, 0.26) 1.62%, rgba(28, 27, 51, 0.26) 95.72%);
+}
+
+input:-webkit-autofill {
+  transition: all 5000s ease-in-out;
 }
