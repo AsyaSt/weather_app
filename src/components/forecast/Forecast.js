@@ -11,11 +11,6 @@ export const Forecast = () => {
     return (
         <div className='forecast'>
             <div className='forecast__head'>
-                {/* <div className="card_house-image">
-                    <img src={houseImage} alt='house'/>     
-                </div>  */}
-                {/* <div className='forecast__head-shape'></div> */}
-
                 <div className='forecast__head-switch'>
                     <p>Hourly Forecast</p>
                     <p>Weekly Forecast</p>

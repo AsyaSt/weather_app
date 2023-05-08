@@ -2,16 +2,7 @@ body{
   --tw-bg-opacity: 1;
     background-color: rgb(243 244 246/var(--tw-bg-opacity));
 }
-.df{
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-.dfa{
-  /* display: flex;
-  justify-content: space-around; */
-  /* align-items: center; */
-}
+
 .App{
   position: relative;
 }

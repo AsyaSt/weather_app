@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Provider, useDispatch} from 'react-redux';
 import { store } from './store/store';
 import { getForecast } from './store/actions/getForecastAction';
@@ -25,11 +25,11 @@ const AppWrapper = () => {
   )
 }
 
-const Main = () => {
+const Main = (props) => {
   return (
   <BrowserRouter history = {history}>
     <Routes>
-      <Route  path="/" element={<MainPage/>} />
+      <Route  path="/" element={<MainPage theme={props.theme} changeTheme={props.changeTheme}/>} />
       <Route  path="/weather-details" element={<WeatherDetailsAll/>} />
       <Route  path="/saved-cities" element={<AllCityPage/>} />
     </Routes>
@@ -37,17 +37,29 @@ const Main = () => {
 }
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  const changeTheme = (mode) => setTheme(mode);
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getWeather('kyiv'));
-    dispatch(getForecast('kyiv'));
+    // dispatch(getForecast('kyiv'));
   }, []);
 
   return (
-    <div className="App">
-            <div class="stars"></div>
-            <div class="twinkling"></div>
-        <Main/>
+    <div className={'App ' + theme}>
+            <div className="stars"></div>
+            <div className="twinkling"></div>
+
+
+
+
+
+
+
+        <Main changeTheme={changeTheme} theme={theme}/>
         <div className='app_info_inner'>
         </div>
     </div>

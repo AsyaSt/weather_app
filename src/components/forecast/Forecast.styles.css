@@ -10,27 +10,14 @@
     border-radius: 44px;
 }
 
+.dark .forecast {
+
+}
+
 .forecast__head {
     height: 49px;
     position: relative;
 }
-
-/* .card_house-image {
-    position: absolute;
-    width: 100%;
-    top: -200px;
-    z-index: -1;
-    border-radius: 44px;
-  } */
-/* .forecast__head-shape {
-    margin-top: 9px;
-    width: 48px;
-    height: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-} */
 
 .forecast__head-switch {
     display: flex;
@@ -38,7 +25,6 @@
     margin-top: 10px;
     margin: 10px 35px 0 35px;
     font-weight: 600;
-    /* font-size: 15px; */
     font-size: 18px;
     line-height: 20px;
     letter-spacing: -0.5px;
@@ -73,15 +59,15 @@
     padding: 16px 8px;
     width: 60px;
     height: 146px;
-    background: rgba(72, 49, 157, 0.2);
+    background: rgba(72, 49, 157, 0.11);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25), inset 1px 1px 0px rgba(255, 255, 255, 0.25);
     border-radius: 30px;
 }
 
-.forecast__item-active {
-    background: #48319D;
-}
+/* .forecast__item-active {
+    background: #14148b;
+} */
 
 .forecast__item-time {
     font-weight: 600;
