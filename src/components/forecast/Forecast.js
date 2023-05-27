@@ -8,7 +8,21 @@ import nav from '../../images/nav.png'
 import { Link } from 'react-router-dom';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
+
 export const Forecast = () => {
+    const responsive = {
+      0:    { items:  4},
+      360:  { items:  5 },
+      660:  { items: 5 },
+      800:  { items: 7 },
+      880:  { items: 8 },
+      1100: { items: 9 },
+      1320: { items: 9 },
+      2000: { items: 9 } 
+  };
+
     return (
         <div className='forecast'>
             <div className='forecast__head'>
@@ -24,11 +38,21 @@ export const Forecast = () => {
             </div>
             <div className='forecast__middle'>
                 <div className='forecast__all-items'>
-                    <ForecastItem/>
+                    {/* <ForecastItem/>
                     <ForecastItem/>
                     <ForecastItem isActive={true}/>
                     <ForecastItem/>
-                    <ForecastItem/> 
+                    <ForecastItem/>  */}
+                    <AliceCarousel className="week_slider" mouseTracking disableDotsControls disableButtonsControls responsive={responsive} controlsStrategy="alternate">
+                        <ForecastItem/>
+                        <ForecastItem/>
+                        <ForecastItem/>
+                        <ForecastItem/>
+                        <ForecastItem isActive={true}/>
+                        <ForecastItem/>
+                        <ForecastItem/>
+                    </AliceCarousel>
+                    
                 </div>
             </div>
 

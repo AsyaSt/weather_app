@@ -92,7 +92,7 @@
 .forecast__bottom {
     overflow: hidden;
     position: relative;
-    height: 88px;
+    height: 78px;
     width: 100%;
     /* border-radius: 0 0 44px 44px; */
 
@@ -156,4 +156,8 @@
 
 .forecast__bottom-plus img {
     z-index: 15;
+}
+
+.forecast__all-items .alice-carousel__wrapper {
+    padding:  0 0 10px 0;
 }

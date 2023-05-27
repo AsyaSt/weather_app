@@ -1,7 +1,7 @@
 .all-weather-details {
     padding: 30px;
-    backdrop-filter: blur(25px);
-    background: linear-gradient(167.57deg, rgba(46, 51, 90, 0.26) -4.68%, rgba(28, 27, 51, 0.26) 95.45%);
+    /* backdrop-filter: blur(25px); */
+    /* background: linear-gradient(167.57deg, rgba(46, 51, 90, 0.26) -4.68%, rgba(28, 27, 51, 0.26) 95.45%); */
 }
 
 .weather-details-aqi {
