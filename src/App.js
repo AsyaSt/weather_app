@@ -12,6 +12,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { MainPage } from './pages/mainpage/mainPage';
 import { WeatherDetailsAll } from './components/weatherDetails/WeatherDetails';
+import { WeatherDetailsPage } from './pages/WeatherDetailsPage/WeatherDetailsPage';
 
 const history = createBrowserHistory();
 
@@ -30,7 +31,7 @@ const Main = (props) => {
   <BrowserRouter history = {history}>
     <Routes>
       <Route  path="/" element={<MainPage theme={props.theme} changeTheme={props.changeTheme}/>} />
-      <Route  path="/weather-details" element={<WeatherDetailsAll/>} />
+      <Route  path="/weather-details" element={<WeatherDetailsPage/>} />
       <Route  path="/saved-cities" element={<AllCityPage/>} />
     </Routes>
   </BrowserRouter>)
@@ -52,12 +53,6 @@ function App() {
     <div className={'App ' + theme}>
             <div className="stars"></div>
             <div className="twinkling"></div>
-
-
-
-
-
-
 
         <Main changeTheme={changeTheme} theme={theme}/>
         <div className='app_info_inner'>

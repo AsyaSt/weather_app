@@ -1,0 +1,36 @@
+.weather-details-page {
+    /* padding: 30px; */
+    height: auto;
+    position: relative;
+}
+
+.weather-details-page__city {
+    padding-top: 30px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 41px;
+    margin-bottom: 26px;
+}
+
+.weather-details-page__city p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.weather-details-forecast {
+    height: auto;
+    width: 100%;
+    padding-bottom: 36px;
+    background: linear-gradient(167.57deg, rgba(46, 51, 90, 0.26) -4.68%, rgba(28, 27, 51, 0.26) 95.45%);
+    box-shadow: inset 0px 1px 0px #ffffff6f;
+    backdrop-filter: blur(25px);
+    /* border-radius: 44px; */
+}

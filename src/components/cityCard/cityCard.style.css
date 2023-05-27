@@ -1,71 +1,71 @@
 
-  @media (max-width: 800px) { 
-    .card {
-      position: relative;
-      display: block;
-      height: 100%;
-    }
-
-    .card_container {
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      
-    }
-
-    .card_inner {
-      margin-top: 100px;
-      z-index: 4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card_text {
-      z-index: 4;
-      display: flex;
-      flex-direction: column;
-      align-items:flex-start;
-    }
-
-    .card_city {
-      font-weight: 400;
-      font-size: 34px;
-      line-height: 41px;
-      letter-spacing: 0.374px;
-    }
-
-    .card_degrees {
-      margin-top: 12px;
-      font-weight: 200;
-      font-size: 96px;
-      line-height: 70px;
-      letter-spacing: 0.374px;
-    }
-
-    .card_desc {
-      margin-top: 12px;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: 0.38px;
-      color: rgba(235, 235, 245, 0.6);
-
-    }
-
-    .card_max-min {
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 24px;
-
-      letter-spacing: 0.38px;
-    }
-
-    .card_house-image img {
-      width: 100%;
-    }
+@media (max-width: 800px) { 
+  .card {
+    position: relative;
+    display: block;
+    height: 100%;
   }
+
+  .card_container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+
+  .card_inner {
+    margin-top: 100px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card_text {
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+  }
+
+  .card_city {
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 41px;
+    letter-spacing: 0.374px;
+  }
+
+  .card_degrees {
+    margin-top: 12px;
+    font-weight: 200;
+    font-size: 96px;
+    line-height: 70px;
+    letter-spacing: 0.374px;
+  }
+
+  .card_desc {
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.38px;
+    color: rgba(235, 235, 245, 0.6);
+
+  }
+
+  .card_max-min {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    letter-spacing: 0.38px;
+  }
+
+  .card_house-image img {
+    width: 100%;
+  }
+}
   

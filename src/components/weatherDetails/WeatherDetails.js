@@ -61,7 +61,7 @@ const WeatherWind = () => {
 
 export const WeatherDetailsAll = () => {
     return(
-        <div className='weather-details-page'>
+        <div className='all-weather-details'>
             <div className='weather-details-aqi'>
                 <WeatherAQI aqi={1}/>
             </div>

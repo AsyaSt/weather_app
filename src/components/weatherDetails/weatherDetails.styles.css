@@ -1,7 +1,7 @@
-.weather-details-page {
+.all-weather-details {
     padding: 30px;
-    height: 100vh;
-    position: relative;
+    backdrop-filter: blur(25px);
+    background: linear-gradient(167.57deg, rgba(46, 51, 90, 0.26) -4.68%, rgba(28, 27, 51, 0.26) 95.45%);
 }
 
 .weather-details-aqi {
@@ -36,7 +36,9 @@
 }
 
 .weather-detail {
-    background: #312b5bb1;
+    background: rgba(72, 49, 157, 0.11);
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25), inset 1px 1px 0px rgba(255, 255, 255, 0.25);
+    /* background: #312b5bb1; */
     /* max-width: 164px; */
     width: calc(50% - 14px);
     height: 164px;

@@ -1,11 +1,12 @@
 import './Forecast.styles.css';
 import forecastImageMoonWind from '../../images/forecast-mini-moonwind.png'
 import subtract from '../../images/Subtract.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import plus from '../../images/plus.png'
 import menu from '../../images/menu.png'
 import nav from '../../images/nav.png'
 import { Link } from 'react-router-dom';
-import houseImage from '../../images/house.png'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 export const Forecast = () => {
     return (
@@ -13,6 +14,9 @@ export const Forecast = () => {
             <div className='forecast__head'>
                 <div className='forecast__head-switch'>
                     <p>Hourly Forecast</p>
+                    <Link to={'/weather-details'}>
+                        <FontAwesomeIcon icon={faCaretDown} className='fa-rotate-180'/>
+                    </Link>
                     <p>Weekly Forecast</p>
                 </div>
             
@@ -48,7 +52,7 @@ export const Forecast = () => {
     )
 }
 
-const ForecastItem = ({isActive}) => {
+export const ForecastItem = ({isActive}) => {
     return (
         <div className={isActive ? 'forecast__item forecast__item-active ' : 'forecast__item'}>
             <p className='forecast__item-time'>12 AM</p>
