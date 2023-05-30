@@ -1,6 +1,7 @@
 import {SET_WEATHER} from '../actions/getWeatherAction'
 import {SET_FORECAST} from '../actions/getForecastAction'
 import { SET_AQ } from '../actions/getAQ';
+import { SET_WEATHER_BY_COORDS } from '../actions/getWeatherByCoords';
 
 
 const initialState = {
@@ -14,7 +15,6 @@ export let weatherReducer =  (state = initialState, action) => {
         case SET_WEATHER:
             const {weather} = action;
             return {...state, weather}
-
         case SET_AQ:
             const {aq} = action;
             return {...state, aq}

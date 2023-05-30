@@ -10,6 +10,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
+import { getGeoposition } from '../../utils/getGeoposition';
 
 export const Forecast = () => {
     const responsive = {
@@ -58,7 +59,7 @@ export const Forecast = () => {
 
             <div className='forecast__bottom'>
                 <div className='forecast__bottom-inner'>
-                    <div className='forecast__bottom-nav'>
+                    <div className='forecast__bottom-nav' onClick={getGeoposition}>
                         <img src={nav}/>
                     </div>
                     <div className='forecast__bottom-plus'>

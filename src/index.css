@@ -69,7 +69,8 @@ body {
 }
 
 .light {
-	background: hsl(194, 66%, 49%);
+	background: linear-gradient(90deg, #598eca 0%, #3a26bd 103.55%);
+	/* background: hsl(194, 66%, 49%); */
 	color: black;
 }
 
@@ -101,7 +102,7 @@ body {
 
 @-webkit-keyframes animateCloud {
     0% {
-        margin-left: -500px;
+        margin-left: -100%;
     }
     100% {
         margin-left: 100%;
@@ -110,7 +111,7 @@ body {
 
 @-moz-keyframes animateCloud {
     0% {
-        margin-left: -500px;
+        margin-left: -100%;
     }
     100% {
         margin-left: 100%;
@@ -119,12 +120,13 @@ body {
 
 @keyframes animateCloud {
     0% {
-        margin-left: -500px;
+        margin-left: -100%;
     }
     100% {
         margin-left: 100%;
     }
 }
+
 
 /* ANIMATIONS */
 
@@ -149,9 +151,9 @@ body {
 }
 
 .light .x3 {
-	-webkit-animation: animateCloud 30s linear infinite;
-	-moz-animation: animateCloud 30s linear infinite;
-	animation: animateCloud 30s linear infinite;
+	-webkit-animation: animateCloud 20s linear infinite;
+	-moz-animation: animateCloud 20s linear infinite;
+	animation: animateCloud 20s linear infinite;
 	
 	-webkit-transform: scale(0.5);
 	-moz-transform: scale(0.5);
@@ -201,6 +203,8 @@ body {
 	height: 120px;
 	position: relative;
 	width: 350px;
+
+	opacity: 0.9;
 }
 
 .light .cloud:after, .cloud:before {
@@ -208,6 +212,7 @@ body {
 	content: '';
 	position: absolute;
 	z-indeX: -1;
+
 }
 
 .light .cloud:after {

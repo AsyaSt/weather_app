@@ -3,6 +3,7 @@ import axios from 'axios';
 import {GET_WEATHER, setWeather} from './actions/getWeatherAction';
 import {GET_FORECAST, setForecast } from './actions/getForecastAction';
 import { GET_AQ, setAQ } from './actions/getAQ';
+import { GET_WEATHER_BY_COORDS} from './actions/getWeatherByCoords';
 
 
 export function requestGetWeather(city) {
@@ -15,6 +16,21 @@ export function* handleGetWeather(action) {
         const {data} = response;
         yield put(setWeather(data));
         yield (handleGetAQ({lat: data.coord.lat, lon: data.coord.lon}));
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+export function requestGetWeatherByCoords(lat, lon) {
+    return axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=bf35cac91880cb98375230fb443a116f&units=metric`)
+}
+
+export function* handleGetWeatherByCoords(action) {
+    try{
+        const response = yield call(() => requestGetWeatherByCoords(action.lat, action.lon));
+        const {data} = response;
+        const cityName = {city: data[0].name};
+        yield (handleGetWeather(cityName))
     } catch(error) {
         console.log(error);
     }
@@ -58,6 +74,7 @@ export function* handleGetForecast(action) {
 
 export function* watcherSaga () {
     yield takeLatest(GET_WEATHER, handleGetWeather);
+    yield takeLatest(GET_WEATHER_BY_COORDS, handleGetWeatherByCoords);
     yield takeLatest(GET_FORECAST, handleGetForecast);
     yield takeLatest(GET_AQ, handleGetAQ);
 }

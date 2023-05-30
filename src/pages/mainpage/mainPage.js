@@ -2,10 +2,8 @@ import { CCityCard } from '../../components/cityCard/cityCard';
 import { Forecast } from '../../components/forecast/Forecast';
 import './mainPage.css';
 
-
-
-
 export const MainPage = (props) => {
+    
     return (
         <div className='mainpage'>
 

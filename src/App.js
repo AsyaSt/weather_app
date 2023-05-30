@@ -45,7 +45,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getWeather('kryvyi rih'));
+    dispatch(getWeather('kyiv'));
     // dispatch(getForecast('kyiv'));
   }, []);
 
