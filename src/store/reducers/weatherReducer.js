@@ -2,12 +2,14 @@ import {SET_WEATHER} from '../actions/getWeatherAction'
 import {SET_FORECAST} from '../actions/getForecastAction'
 import { SET_AQ } from '../actions/getAQ';
 import { SET_WEATHER_BY_COORDS } from '../actions/getWeatherByCoords';
+import { SET_SAVEDCITY } from '../actions/getSavedCityAction';
 
 
 const initialState = {
     weather: undefined, 
     forecast: undefined,
-    aq: undefined
+    aq: undefined,
+    savedCity: JSON.parse(localStorage.savedCity) || []
 };
 
 export let weatherReducer =  (state = initialState, action) => {
@@ -21,6 +23,9 @@ export let weatherReducer =  (state = initialState, action) => {
         case SET_FORECAST:
             const {forecast} = action;
             return {...state, forecast}
+        case SET_SAVEDCITY:
+            const {savedCityWeather} = action;
+            return {...state, savedCityWeather}
         default:
             return state;
     }

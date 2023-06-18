@@ -27,6 +27,26 @@
     margin-top: 5px;
 }
 
+.aqi-back {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    margin: 5px 0 10px 0;
+}
+
+.aqi-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.aqi-details p {
+    width: 50%;
+    margin-top: 3px;
+}
+
 .weather-details-all {
     display: flex;
     flex-wrap: wrap;
@@ -72,7 +92,7 @@
     width: 100%;
     height: 4px;
     border-radius: 4px;
-    background: linear-gradient(90deg, #427BD1 1.95%, #ff62d5 101.56%);
+    background: linear-gradient(90deg, #49d142 1.95%, #cf1241 101.56%);
     margin-top: 15px;
 }
 
