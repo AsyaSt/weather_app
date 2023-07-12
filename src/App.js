@@ -7,7 +7,7 @@ import { getWeather } from './store/actions/getWeatherAction';
 import { CCityCard } from './components/cityCard/cityCard';
 import { CForecast } from './components/weekForecast';
 import { CWeatherHigtLigts } from './components/weatherConditions/weatherCondition';
-import { AllCityPage } from './pages/allCityPage/allCityPage';
+import { CAllCityPage } from './pages/allCityPage/allCityPage';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { MainPage } from './pages/mainpage/mainPage';
@@ -16,7 +16,7 @@ import { WeatherDetailsPage } from './pages/WeatherDetailsPage/WeatherDetailsPag
 import { getSavedCity } from './store/actions/getSavedCityAction';
 
 const history = createBrowserHistory();
-localStorage.savedCity = JSON.stringify(['London', 'Kharkiv', 'Florida', 'Kyiv', 'Mexico']);
+localStorage.savedCity =  localStorage.savedCity || JSON.stringify(['London', 'Kharkiv', 'Florida', 'Kyiv', 'Mexico']);
 
 
 store.subscribe(() => console.log(store.getState()));
@@ -35,7 +35,7 @@ const Main = (props) => {
     <Routes>
       <Route  path="/" element={<MainPage theme={props.theme} changeTheme={props.changeTheme}/>} />
       <Route  path="/weather-details" element={<WeatherDetailsPage/>} />
-      <Route  path="/saved-cities" element={<AllCityPage/>} />
+      <Route  path="/saved-cities" element={<CAllCityPage/>} />
     </Routes>
   </BrowserRouter>)
 }
@@ -46,11 +46,11 @@ function App() {
   const changeTheme = (mode) => setTheme(mode);
 
   const dispatch = useDispatch();
-  let cities = (JSON.parse(localStorage.savedCity) || []);
+  // let cities = (JSON.parse(localStorage.savedCity) || []);
 
   useEffect(() => {
     dispatch(getWeather('kyiv'));
-    dispatch(getSavedCity(cities))
+    // dispatch(getSavedCity(cities))
     // dispatch(getForecast('kyiv'));
   }, []);
 

@@ -11,6 +11,9 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import { getGeoposition } from '../../utils/getGeoposition';
+import { useDispatch } from 'react-redux';
+import { addToSavedCity } from '../../store/actions/addToSavedCitiesAction';
+import { getSavedCity } from '../../store/actions/getSavedCityAction';
 
 export const Forecast = () => {
     const responsive = {
@@ -23,6 +26,9 @@ export const Forecast = () => {
       1320: { items: 9 },
       2000: { items: 9 } 
   };
+
+  const dispatch = useDispatch();
+
 
     return (
         <div className='forecast'>
@@ -39,12 +45,10 @@ export const Forecast = () => {
             </div>
             <div className='forecast__middle'>
                 <div className='forecast__all-items'>
-                    {/* <ForecastItem/>
-                    <ForecastItem/>
-                    <ForecastItem isActive={true}/>
-                    <ForecastItem/>
-                    <ForecastItem/>  */}
-                    <AliceCarousel className="week_slider" mouseTracking disableDotsControls disableButtonsControls responsive={responsive} controlsStrategy="alternate">
+                    <AliceCarousel className="week_slider" mouseTracking 
+                        disableDotsControls disableButtonsControls responsive={responsive} 
+                        controlsStrategy="alternate"
+                    >
                         <ForecastItem/>
                         <ForecastItem/>
                         <ForecastItem/>
@@ -62,7 +66,14 @@ export const Forecast = () => {
                     <div className='forecast__bottom-nav' onClick={getGeoposition}>
                         <img src={nav}/>
                     </div>
-                    <div className='forecast__bottom-plus'>
+                    <div className='forecast__bottom-plus' onClick={() => {
+                        localStorage.savedCity = ((JSON.parse(localStorage.savedCity).includes('Tokyo')) ?  
+                            JSON.stringify(JSON.parse(localStorage.savedCity)) 
+                        : 
+                            JSON.stringify(['Tokyo', ...JSON.parse(localStorage.savedCity)]) );
+                            
+                        dispatch(addToSavedCity('Tokyo'))
+                    }}>
                         <img src={plus}/>
                     </div>
                     <Link to={'/saved-cities'}>

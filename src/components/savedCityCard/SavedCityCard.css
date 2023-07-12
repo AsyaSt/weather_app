@@ -21,6 +21,7 @@
     right: 0;
     top: -12px;
     z-index: 33;
+    display: flex;
 }
 
 .widget_image-desc {

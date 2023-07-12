@@ -5,6 +5,9 @@ import {GET_FORECAST, setForecast } from './actions/getForecastAction';
 import { GET_AQ, setAQ } from './actions/getAQ';
 import { GET_WEATHER_BY_COORDS} from './actions/getWeatherByCoords';
 import { GET_SAVEDCITY, setSavedCity } from './actions/getSavedCityAction';
+import { ADD_TO_SAVEDCITY } from './actions/addToSavedCitiesAction';
+import { DELETE_FROM_SAVEDCITY } from './actions/deleteFromSavedCitiesAction';
+
 
 
 export function requestGetWeather(city) {
@@ -28,10 +31,10 @@ export function requestGetSavedCitiesWeather(city) {
 
 export function* handleGetSavedCitiesWeather(action) {
     try{
+        let cities = (JSON.parse(localStorage.savedCity) || []);
         let data = [];
-        for (let city of action.cities) {
+        for (let city of cities) {
             const response = yield call(() => requestGetSavedCitiesWeather(city));
-            // console.log(response);
             data.push(response.data);
         }
         yield put(setSavedCity(data));
@@ -40,6 +43,18 @@ export function* handleGetSavedCitiesWeather(action) {
         console.log(error);
     }
 }
+
+// export function* handleAddToSavedCities(city) {
+//     try{
+//         yield JSON.parse(localStorage.savedCity).unshift(city);
+
+//         let cities = (JSON.parse(localStorage.savedCity) || []);
+//         handleGetSavedCitiesWeather({cities});
+//     }
+//     catch(error) {
+//         console.log(error);
+//     }
+// }
 
 export function requestGetWeatherByCoords(lat, lon) {
     return axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=bf35cac91880cb98375230fb443a116f&units=metric`)
@@ -97,5 +112,7 @@ export function* watcherSaga () {
     yield takeLatest(GET_WEATHER_BY_COORDS, handleGetWeatherByCoords);
     yield takeLatest(GET_FORECAST, handleGetForecast);
     yield takeLatest(GET_AQ, handleGetAQ);
+    yield takeLatest(ADD_TO_SAVEDCITY, handleGetSavedCitiesWeather);
+    yield takeLatest(DELETE_FROM_SAVEDCITY, handleGetSavedCitiesWeather);
     yield takeLatest(GET_SAVEDCITY, handleGetSavedCitiesWeather);
 }
