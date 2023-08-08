@@ -7,8 +7,11 @@ import './WeatherDetailsPage.css'
 
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
+import { useSelector } from "react-redux";
 
 export const WeatherDetailsPage = () => {
+    const weather = useSelector(state =>  state?.weatherReducer?.weather);
+
     const responsive = {
         0:    { items:  4},
         360:  { items:  5 },
@@ -22,8 +25,8 @@ export const WeatherDetailsPage = () => {
     return (
         <div className="weather-details-page">
             <div className="weather-details-page__city">
-                <h3>Kyiv</h3>
-                <p> 19 | Clear</p>
+                <h3>{weather?.name}</h3>
+                <p> {Math.round(weather?.main?.temp)} | {weather?.weather[0]?.main}</p>
 
             </div>
 

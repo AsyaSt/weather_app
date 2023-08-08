@@ -44,18 +44,6 @@ export function* handleGetSavedCitiesWeather(action) {
     }
 }
 
-// export function* handleAddToSavedCities(city) {
-//     try{
-//         yield JSON.parse(localStorage.savedCity).unshift(city);
-
-//         let cities = (JSON.parse(localStorage.savedCity) || []);
-//         handleGetSavedCitiesWeather({cities});
-//     }
-//     catch(error) {
-//         console.log(error);
-//     }
-// }
-
 export function requestGetWeatherByCoords(lat, lon) {
     return axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&appid=bf35cac91880cb98375230fb443a116f&units=metric`)
 }

@@ -8,7 +8,6 @@ const initialState = {
     weather: undefined, 
     forecast: undefined,
     aq: undefined,
-    // savedCity: JSON.parse(localStorage.savedCity) || []
 };
 
 export let weatherReducer =  (state = initialState, action) => {

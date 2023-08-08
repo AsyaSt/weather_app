@@ -1,6 +1,6 @@
 .allcity_inner {
     padding: 20px;
-    
+    min-height: 100vh;
 }
 
 .widget{

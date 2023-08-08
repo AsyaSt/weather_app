@@ -3,18 +3,18 @@ import { WidgetCityCard } from "../../components/savedCityCard/SavedCityCard"
 import arrowLeft from '../../images/arrow-left.svg'
 import { Link } from 'react-router-dom'
 import { SearchBar } from '../../components/searchBar/searchBar'
-import { connect, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getSavedCity } from '../../store/actions/getSavedCityAction'
 
-export const AllCityPage = ({savedCities}) => {
+export const AllCityPage = () => {
     let dispatch = useDispatch();
     useEffect(() => {
-        // let cities = (JSON.parse(localStorage.savedCity) || []);
-        // dispatch(getSavedCity(cities))
         dispatch(getSavedCity())
-    }, [])
+    }, []);
 
+    const savedCities = useSelector(state =>  state?.weatherReducer?.savedCityWeather);
+    
     return (
         <>
             <div className="allcity-header">
@@ -27,12 +27,10 @@ export const AllCityPage = ({savedCities}) => {
             <SearchBar/>
             <div className="allcity_inner">
             {
-                (savedCities).map((city, i) => <WidgetCityCard city={city} key={i}/>)
+                savedCities && (savedCities).map((city, i) => <WidgetCityCard city={city} key={i}/>)
             }
 
             </div>
         </>
     )
 }
-
-export const CAllCityPage = connect(state => ({savedCities: state?.weatherReducer?.savedCityWeather || []} ), )(AllCityPage);

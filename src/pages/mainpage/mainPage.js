@@ -1,4 +1,4 @@
-import { CCityCard } from '../../components/cityCard/cityCard';
+import { CityCard } from '../../components/cityCard/cityCard';
 import { Forecast } from '../../components/forecast/Forecast';
 import './mainPage.css';
 
@@ -36,7 +36,7 @@ export const MainPage = (props) => {
             <div className='sun' onClick={() => props.changeTheme('dark')}/>
 
 
-            <CCityCard/>
+            <CityCard/>
             <Forecast/>
         </div>
     )

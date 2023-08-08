@@ -1,10 +1,9 @@
 import './cityCard.style.css'
-import { connect } from "react-redux";
+import {useSelector } from "react-redux";
 
-const CityCard = ({weather}) => {
-    console.log(new Date(1689040712 * 1000))
-    
-    console.log(new Date(1689098867 * 1000))
+export const CityCard = () => {
+    const weather = useSelector(state =>  state.weatherReducer?.weather); 
+
     // let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return (
         <div className="card ">
@@ -12,9 +11,9 @@ const CityCard = ({weather}) => {
                 <div className="card_inner">
                     <div className="card_text">
                         <p className="card_city">{weather?.name || 'Test city'}  </p>
-                        <p className="card_degrees">{(weather?.main?.temp && Math.round(weather?.main?.temp) + '°') || '??'}</p>
-                        <p className="card_desc">{Array.isArray(weather.weather) ? weather?.weather[0]?.main : ''}</p>
-                        <p className="card_max-min">H:{(weather?.main?.temp_max && Math.round(weather?.main?.temp_max) + '° ') || '??'} L:{(weather?.main?.temp_min && Math.round(weather?.main?.temp_min) + '°') || '10°C'}</p>
+                        <p className="card_degrees">{Math.round(weather?.main?.temp) + '°' || '??'}</p>
+                        <p className="card_desc">{weather?.weather[0]?.main || ''}</p>
+                        <p className="card_max-min">H:{Math.round(weather?.main?.temp_max) + '° ' || '??'} L:{ Math.round(weather?.main?.temp_min) + '°' || '10°C'}</p>
                     </div>
                 </div> 
             </div>
@@ -22,5 +21,3 @@ const CityCard = ({weather}) => {
         </div>
     )
 }
-
-export const CCityCard = connect(state => ({weather: state.weatherReducer.weather || {}}), )(CityCard);
