@@ -1,44 +1,45 @@
 import './Forecast.styles.css';
 import forecastImageMoonWind from '../../images/forecast-mini-moonwind.png'
-import subtract from '../../images/Subtract.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import plus from '../../images/plus.png'
 import menu from '../../images/menu.png'
 import nav from '../../images/nav.png'
 import { Link } from 'react-router-dom';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import { getGeoposition } from '../../utils/getGeoposition';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToSavedCity } from '../../store/actions/addToSavedCitiesAction';
-import { getSavedCity } from '../../store/actions/getSavedCityAction';
+import { localTimeInForecast } from '../../utils/getForecastLocalTime';
 
 export const Forecast = () => {
     const responsive = {
-      0:    { items:  4},
-      360:  { items:  5 },
+      0:    { items:  3},
+      360:  { items:  4 },
       660:  { items: 5 },
       800:  { items: 7 },
       880:  { items: 8 },
       1100: { items: 9 },
       1320: { items: 9 },
       2000: { items: 9 } 
-  };
+    };
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
+    const weekForecast = useSelector(state =>  state?.weatherReducer?.forecast?.list);
 
     return (
         <div className='forecast'>
             <div className='forecast__head'>
                 <div className='forecast__head-switch'>
                     <p>Hourly Forecast</p>
-                    <Link to={'/weather-details'}>
+                    
+                    <Link to={'/weather-details'} className='forecast__head-switch-a'>
                         <FontAwesomeIcon icon={faCaretDown} className='fa-rotate-180'/>
+                    
+                        <span>View Full Report</span>
                     </Link>
-                    <p>Weekly Forecast</p>
                 </div>
             
                 <div className='forecast__head-separator'></div>
@@ -49,13 +50,8 @@ export const Forecast = () => {
                         disableDotsControls disableButtonsControls responsive={responsive} 
                         controlsStrategy="alternate"
                     >
-                        <ForecastItem/>
-                        <ForecastItem/>
-                        <ForecastItem/>
-                        <ForecastItem/>
-                        <ForecastItem isActive={true}/>
-                        <ForecastItem/>
-                        <ForecastItem/>
+                        {weekForecast && weekForecast.map((forecast, i) => <ForecastItem key={i} forecast={forecast} 
+                         />)} 
                     </AliceCarousel>
                     
                 </div>
@@ -88,12 +84,16 @@ export const Forecast = () => {
     )
 }
 
-export const ForecastItem = ({isActive}) => {
+export const ForecastItem = ({forecast}) => {
+    let forecastHours = localTimeInForecast(forecast?.dt_txt);
+
     return (
-        <div className={isActive ? 'forecast__item forecast__item-active ' : 'forecast__item'}>
-            <p className='forecast__item-time'>12 AM</p>
+        <div className='forecast__item'>
+            <p className='forecast__item-time'>{forecastHours.getDate()  + ' ' + forecastHours.toLocaleString('en-EN', { month: 'short'})  }</p>
+            <p className="forecast__item-time">{forecastHours.getHours() + ':00'  }</p>
             <img className='forecast__item-image' alt='weather on this time' src={forecastImageMoonWind}/>
-            <p className='forecast__item-temperature'>19°</p>
+            <p className='forecast__item-temperature'>{Math.round(forecast?.main?.temp_max)}°</p>
+            <span className="forecast_night_degree">{Math.round(forecast?.main?.temp_min)}°</span>
         </div>
     )
 }

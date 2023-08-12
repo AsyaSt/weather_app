@@ -1,10 +1,10 @@
 import './SavedCityCard.css'
 import windCloud from '../../images/Moonfastwind.png'
 import { Link } from 'react-router-dom'
-import { store } from '../../store/store'
 import { getWeather } from '../../store/actions/getWeatherAction'
 import { useDispatch } from 'react-redux'
 import { deleteFromSavedCity } from '../../store/actions/deleteFromSavedCitiesAction'
+import { getForecast } from '../../store/actions/getForecastAction'
 
 
 
@@ -14,7 +14,10 @@ export const WidgetCityCard = (city) => {
     return (
         <div className="widget">
             <Link to={'/'}>
-                <div className='widget_inner'  onClick={() => store.dispatch(getWeather(city.city.name))}>
+                <div className='widget_inner'  onClick={() => {
+                    dispatch(getWeather(city.city.name))
+                    dispatch(getForecast(city.city.name));
+                }}>
                     <div className='widget_text'>
                         <p className='widget_degree'>{Math.round(city?.city?.main?.temp)+'°' || '???'}</p>
                         <p className='widget_max-min'>{'H:' + Math.round(city?.city?.main?.temp_max)+'°' || '???'} {'L:' + Math.round(city?.city?.main?.temp_min)+'°' || '???'} </p>

@@ -2,12 +2,14 @@ import {SET_WEATHER} from '../actions/getWeatherAction'
 import {SET_FORECAST} from '../actions/getForecastAction'
 import { SET_AQ } from '../actions/getAQ';
 import { SET_SAVEDCITY } from '../actions/getSavedCityAction';
+import { SET_CHANGE_THEME } from '../actions/changeTheme';
 
 
 const initialState = {
     weather: undefined, 
     forecast: undefined,
     aq: undefined,
+    theme: localStorage.theme
 };
 
 export let weatherReducer =  (state = initialState, action) => {
@@ -21,6 +23,9 @@ export let weatherReducer =  (state = initialState, action) => {
         case SET_FORECAST:
             const {forecast} = action;
             return {...state, forecast}
+        case SET_CHANGE_THEME:
+            const {theme} = action;
+            return {...state, theme}
         case SET_SAVEDCITY:
             const {savedCityWeather} = action;
             return {...state, savedCityWeather}

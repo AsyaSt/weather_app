@@ -13,7 +13,7 @@ export const WeatherSunrise = () => {
                 </div>
 
                 <p className='weather-detail__info'>
-                    {new Date(weather?.sys?.sunrise * 1000).getHours()} : {new Date(weather?.sys?.sunrise * 1000).getMinutes()} AM
+                    {new Date(weather?.sys?.sunrise * 1000).getHours()}:{new Date(weather?.sys?.sunrise * 1000).getMinutes()} AM
                 </p> 
             </div>
             <div>

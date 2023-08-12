@@ -7,6 +7,7 @@ import { GET_WEATHER_BY_COORDS} from './actions/getWeatherByCoords';
 import { GET_SAVEDCITY, setSavedCity } from './actions/getSavedCityAction';
 import { ADD_TO_SAVEDCITY } from './actions/addToSavedCitiesAction';
 import { DELETE_FROM_SAVEDCITY } from './actions/deleteFromSavedCitiesAction';
+import { GET_CHANGE_THEME, ChangeTheme} from './actions/changeTheme';
 
 
 
@@ -39,6 +40,16 @@ export function* handleGetSavedCitiesWeather(action) {
         }
         yield put(setSavedCity(data));
         
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+export function* handleChangeTheme() {
+    try{
+        let theme = (localStorage.theme === 'dark') ? 'light' : 'dark';
+        localStorage.theme = theme;
+        yield put(ChangeTheme(theme));
     } catch(error) {
         console.log(error);
     }
@@ -101,6 +112,7 @@ export function* watcherSaga () {
     yield takeLatest(GET_FORECAST, handleGetForecast);
     yield takeLatest(GET_AQ, handleGetAQ);
     yield takeLatest(ADD_TO_SAVEDCITY, handleGetSavedCitiesWeather);
+    yield takeLatest(GET_CHANGE_THEME, handleChangeTheme);
     yield takeLatest(DELETE_FROM_SAVEDCITY, handleGetSavedCitiesWeather);
     yield takeLatest(GET_SAVEDCITY, handleGetSavedCitiesWeather);
 }

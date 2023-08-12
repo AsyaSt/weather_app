@@ -1,5 +1,7 @@
 import { CityCard } from '../../components/cityCard/cityCard';
 import { Forecast } from '../../components/forecast/Forecast';
+import { ChangeTheme, getChangeTheme } from '../../store/actions/changeTheme';
+import { store } from '../../store/store';
 import './mainPage.css';
 
 export const MainPage = (props) => {
@@ -7,7 +9,7 @@ export const MainPage = (props) => {
     return (
         <div className='mainpage'>
 
-            <div className='eclipse' onClick={() => props.changeTheme('light')}>
+            <div className='eclipse' onClick={() => store.dispatch(getChangeTheme())}>
               <div className='eclipse-inside'/>
             </div>
 
@@ -33,7 +35,7 @@ export const MainPage = (props) => {
                 </div>
             </div>
 
-            <div className='sun' onClick={() => props.changeTheme('dark')}/>
+            <div className='sun' onClick={() =>store.dispatch(getChangeTheme())}/>
 
 
             <CityCard/>
