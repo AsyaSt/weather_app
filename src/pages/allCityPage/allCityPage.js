@@ -4,7 +4,7 @@ import arrowLeft from '../../images/arrow-left.svg'
 import { Link } from 'react-router-dom'
 import { SearchBar } from '../../components/searchBar/searchBar'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { getSavedCity } from '../../store/actions/getSavedCityAction'
 
 export const AllCityPage = () => {

@@ -5,7 +5,9 @@ import { getWeather } from '../../store/actions/getWeatherAction'
 import { useDispatch } from 'react-redux'
 import { deleteFromSavedCity } from '../../store/actions/deleteFromSavedCitiesAction'
 import { getForecast } from '../../store/actions/getForecastAction'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { AnimationSun } from '../../animation/animation'
 
 
 
@@ -26,7 +28,8 @@ export const WidgetCityCard = (city) => {
                 </div>
                 <div className='widget_image'>
                     <div>
-                        <img src={windCloud} alt='weather'/>
+                        {/* <img src={windCloud} alt='weather'/> */}
+                        <AnimationSun/>
                         <p className='widget_image-desc'>{city.city?.weather[0].main || '???'}</p>
                     </div>
 
@@ -34,7 +37,7 @@ export const WidgetCityCard = (city) => {
                         e.preventDefault()       
                         dispatch(deleteFromSavedCity(city.city.name))
                     }}>
-                        x
+                        <FontAwesomeIcon className='fa-lg' icon={faXmark} />
                     </div>
                     
                 </div>

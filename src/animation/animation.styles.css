@@ -1,0 +1,17 @@
+.animation-sun {
+    width: 120px;
+    height: 120px;
+    background: rgb(255, 240, 127);
+    /* background: radial-gradient(circle at 100px 100px, #5cabff, #000); */
+    border-radius: 50%;
+    box-shadow: 0px 0px 1rem 0.5rem rgba(255, 240, 215, 0.75);
+    /* animation: cube-rotate 8s linear infinite; */
+}
+
+@keyframes cube-rotate {
+    0% { transform: rotateX(0) rotateY(0); }
+    50% { transform: rotateX(0) rotateY(0.1turn); }
+    100% { transform: rotateX(0) rotateY(0); }
+  }
+
+

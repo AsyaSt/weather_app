@@ -8,8 +8,36 @@ import { GET_SAVEDCITY, setSavedCity } from './actions/getSavedCityAction';
 import { ADD_TO_SAVEDCITY } from './actions/addToSavedCitiesAction';
 import { DELETE_FROM_SAVEDCITY } from './actions/deleteFromSavedCitiesAction';
 import { GET_CHANGE_THEME, ChangeTheme} from './actions/changeTheme';
+import { GET_SEARCH_CITY, setSearchCity } from './actions/searchCity';
 
 
+export const GEO_API_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo'
+
+
+export function requestSearchCity(input) {
+    return axios.get(`${GEO_API_URL}/cities?minPopulation=10000&limit=10&namePrefix=${input}`, {
+        headers: {
+            'X-RapidAPI-Key': '5d95365d57mshfec75e7e062828fp10961cjsne04db372b400',
+            'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+        }
+    })
+}
+
+export function* handleSearchCity(action) {
+    if(action.input.length < 1) {
+        console.log('none')
+        yield put(setSearchCity([]));
+        return
+    }
+    try{
+        const response = yield call(() => requestSearchCity(action.input));
+        const {data} = response.data;
+        yield put(setSearchCity(data));
+    } catch(error) {
+        console.log('none error')
+        console.log(error);
+    }
+}
 
 export function requestGetWeather(city) {
     return axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bf35cac91880cb98375230fb443a116f&units=metric`)
@@ -115,4 +143,5 @@ export function* watcherSaga () {
     yield takeLatest(GET_CHANGE_THEME, handleChangeTheme);
     yield takeLatest(DELETE_FROM_SAVEDCITY, handleGetSavedCitiesWeather);
     yield takeLatest(GET_SAVEDCITY, handleGetSavedCitiesWeather);
+    yield takeLatest(GET_SEARCH_CITY, handleSearchCity);
 }

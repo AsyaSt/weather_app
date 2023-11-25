@@ -3,6 +3,7 @@ import {SET_FORECAST} from '../actions/getForecastAction'
 import { SET_AQ } from '../actions/getAQ';
 import { SET_SAVEDCITY } from '../actions/getSavedCityAction';
 import { SET_CHANGE_THEME } from '../actions/changeTheme';
+import { SET_SEARCH_CITY } from '../actions/searchCity';
 
 
 const initialState = {
@@ -29,6 +30,10 @@ export let weatherReducer =  (state = initialState, action) => {
         case SET_SAVEDCITY:
             const {savedCityWeather} = action;
             return {...state, savedCityWeather}
+        case SET_SEARCH_CITY:
+            const {searchcity} = action;
+            console.log(searchcity)
+            return {...state, searchcity}
         default:
             return state;
     }
