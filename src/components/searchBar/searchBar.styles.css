@@ -48,7 +48,7 @@ input:-webkit-autofill {
 }
 
 .search_result {
-  width: 100%;
+  width: calc(100% - 32px);
   max-height: 100vh;
   position: absolute;
   top: 40px;
@@ -59,14 +59,21 @@ input:-webkit-autofill {
   background: rgba(8, 27, 51, 0.96);
   z-index: 34;
   padding: 0 12px 0 12px;
+  border-radius: 10px;
+}
+
+.light .search_result {
+  background: linear-gradient(90deg, #598eca 0%, #3a26bd);
 }
 
 .search_result-item {
-  width: 100%;
+  width: auto;
   height: 60px;
-  /* background: rgba(8, 27, 51, 0.96); */
   display: flex;
   align-items: center;
   border-bottom: 1px solid black;
-  /* margin-top: 7px; */
+}
+
+.search_result-item:hover {
+  background: rgb(15, 48, 89);
 }

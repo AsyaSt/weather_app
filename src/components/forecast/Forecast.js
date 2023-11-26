@@ -33,12 +33,8 @@ export const Forecast = () => {
         <div className='forecast'>
             <div className='forecast__head'>
                 <div className='forecast__head-switch'>
-                    <p>Hourly Forecast</p>
-                    
                     <Link to={'/weather-details'} className='forecast__head-switch-a'>
-                        <FontAwesomeIcon icon={faCaretDown} className='fa-rotate-180'/>
-                    
-                        <span>View Full Report</span>
+                        <FontAwesomeIcon icon={faCaretDown} className='fa-rotate-180 fa-lg'/>
                     </Link>
                 </div>
             

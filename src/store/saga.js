@@ -25,7 +25,6 @@ export function requestSearchCity(input) {
 
 export function* handleSearchCity(action) {
     if(action.input.length < 1) {
-        console.log('none')
         yield put(setSearchCity([]));
         return
     }
@@ -34,7 +33,6 @@ export function* handleSearchCity(action) {
         const {data} = response.data;
         yield put(setSearchCity(data));
     } catch(error) {
-        console.log('none error')
         console.log(error);
     }
 }

@@ -42,6 +42,8 @@ export const WidgetCityCard = (city) => {
                     
                 </div>
             </Link>
+            <div className='shadow'></div>
+            <div className='shadow shadow2'></div>
         </div>
     )
 }

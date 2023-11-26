@@ -1,7 +1,7 @@
 import './searchBar.styles.css'
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getForecast } from '../../store/actions/getForecastAction';
 import { getWeather } from '../../store/actions/getWeatherAction';
@@ -11,7 +11,8 @@ export const SearchBar = () => {
     const dispatch = useDispatch();
     const [value, setValue] =  useState('');
     const get = (val) => dispatch(getSearchCity(val));
-    console.log(value)
+
+    useEffect( () => () => get(''), [] );
 
     const searchResults= useSelector(state =>  state?.weatherReducer?.searchcity);
     return(
@@ -37,7 +38,6 @@ export const SearchBar = () => {
                         get(e.target.value);
                     }}
                     
-
                 />
                 
             </form>
@@ -46,8 +46,8 @@ export const SearchBar = () => {
                 {searchResults ? 
                 searchResults.map((result) => 
                 
-                    <div className='search_result-item'>{result.city}
-                    
+                    <div className='search_result-item'>
+                    {result.city}, {result.country}
                     </div>
                 ) 
                 : <></>}
