@@ -69,10 +69,8 @@ body {
 }
 
 .light {
-	/* background: linear-gradient(90deg, #598eca 0%, #3a26bd 103.55%); */
-	/* background: hsl(194, 66%, 49%); */
-	background: linear-gradient(90deg, #81afe3 0%, #3725af 103.55%);
-	/* color: black; */
+	/* background: linear-gradient(90deg, #81afe3 0%, #3725af 103.55%); */
+	background: linear-gradient(90deg, #4584caab 0%, #503bdab5 103.55%);
 }
 
 .light .sun {

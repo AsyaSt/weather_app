@@ -1,6 +1,6 @@
 .animation-sun {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     background: rgb(255, 240, 127);
     /* background: radial-gradient(circle at 100px 100px, #5cabff, #000); */
     border-radius: 50%;

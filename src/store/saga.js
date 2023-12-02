@@ -15,7 +15,7 @@ export const GEO_API_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo'
 
 
 export function requestSearchCity(input) {
-    return axios.get(`${GEO_API_URL}/cities?minPopulation=10000&limit=10&namePrefix=${input}`, {
+    return axios.get(`${GEO_API_URL}/cities?minPopulation=100000&limit=10&namePrefix=${input}`, {
         headers: {
             'X-RapidAPI-Key': '5d95365d57mshfec75e7e062828fp10961cjsne04db372b400',
             'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'

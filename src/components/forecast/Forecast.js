@@ -1,19 +1,24 @@
 import './Forecast.styles.css';
 import forecastImageMoonWind from '../../images/forecast-mini-moonwind.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import plus from '../../images/plus.png'
-import menu from '../../images/menu.png'
-import nav from '../../images/nav.png'
 import { Link } from 'react-router-dom';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBookmark, faCaretDown, faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import { getGeoposition } from '../../utils/getGeoposition';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToSavedCity } from '../../store/actions/addToSavedCitiesAction';
 import { localTimeInForecast } from '../../utils/getForecastLocalTime';
+import { store } from '../../store/store';
+import { useEffect, useState } from 'react';
+import { deleteFromSavedCity } from '../../store/actions/deleteFromSavedCitiesAction';
+
+
 
 export const Forecast = () => {
+
+    let savedCities = useSelector(state => state?.weatherReducer?.savedCityWeather);
+
     const responsive = {
       0:    { items:  3},
       360:  { items:  4 },
@@ -25,13 +30,27 @@ export const Forecast = () => {
       2000: { items: 9 } 
     };
 
+    let color = (JSON.parse(localStorage.savedCity).includes(store.getState()?.weatherReducer?.forecast?.city?.name)) ? '#362a84' : 'white';
+
+    const isCitySaved = (city) => {
+        if ((JSON.parse(localStorage.savedCity).includes(city)))  {
+            localStorage.savedCity = JSON.stringify(JSON.parse(localStorage.savedCity)); 
+            dispatch(deleteFromSavedCity(city))
+        }
+        else {
+            localStorage.savedCity = JSON.stringify([city, ...JSON.parse(localStorage.savedCity)]);
+            dispatch(addToSavedCity(city));
+        }
+    }
+    
     const dispatch = useDispatch();
 
     const weekForecast = useSelector(state =>  state?.weatherReducer?.forecast?.list);
-
+    
     return (
         <div className='forecast'>
             <div className='forecast__head'>
+
                 <div className='forecast__head-switch'>
                     <Link to={'/weather-details'} className='forecast__head-switch-a'>
                         <FontAwesomeIcon icon={faCaretDown} className='fa-rotate-180 fa-lg'/>
@@ -55,22 +74,20 @@ export const Forecast = () => {
 
             <div className='forecast__bottom'>
                 <div className='forecast__bottom-inner'>
-                    <div className='forecast__bottom-nav' onClick={getGeoposition}>
-                        <img src={nav}/>
-                    </div>
-                    <div className='forecast__bottom-plus' onClick={() => {
-                        localStorage.savedCity = ((JSON.parse(localStorage.savedCity).includes('Tokyo')) ?  
-                            JSON.stringify(JSON.parse(localStorage.savedCity)) 
-                        : 
-                            JSON.stringify(['Tokyo', ...JSON.parse(localStorage.savedCity)]) );
-                            
-                        dispatch(addToSavedCity('Tokyo'))
+                    <div className='save-city' onClick={() => {
+                        let city = store.getState()?.weatherReducer?.forecast?.city?.name;
+                        isCitySaved(city)
                     }}>
-                        <img src={plus}/>
+                        <FontAwesomeIcon icon={faBookmark} className='fa-xl'
+                        style={{color:`${color}`}}/> 
+                    </div>
+
+                    <div className='forecast__bottom-nav' onClick={getGeoposition}>
+                        <FontAwesomeIcon icon={faLocationDot} className='fa-xl'/>
                     </div>
                     <Link to={'/saved-cities'}>
                         <div className='forecast__bottom-menu'>
-                            <img src={menu}/>
+                            <FontAwesomeIcon icon={faBars} className='fa-xl'/>
                         </div>
                     </Link>
                 </div>

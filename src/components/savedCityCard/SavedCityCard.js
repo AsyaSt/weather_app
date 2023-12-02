@@ -25,19 +25,20 @@ export const WidgetCityCard = (city) => {
                         <p className='widget_max-min'>{'H:' + Math.round(city?.city?.main?.temp_max)+'°' || '???'} {'L:' + Math.round(city?.city?.main?.temp_min)+'°' || '???'} </p>
                         <p className='widget_city'>{city.city.name || '???'}</p>
                     </div>
-                </div>
-                <div className='widget_image'>
-                    <div>
-                        {/* <img src={windCloud} alt='weather'/> */}
-                        <AnimationSun/>
-                        <p className='widget_image-desc'>{city.city?.weather[0].main || '???'}</p>
-                    </div>
 
+                    <div className='widget_image'>
+                        {/* <img src={windCloud} alt='weather'/> */}
+                        {/* <AnimationSun/> */}
+                        {/* <p className='widget_image-desc'>{city.city?.weather[0].main || '???'}</p> */}
+                    </div>
+                </div>
+                <div className='widget_delete'>
                     <div onClick={(e) => {
                         e.preventDefault()       
                         dispatch(deleteFromSavedCity(city.city.name))
                     }}>
-                        <FontAwesomeIcon className='fa-lg' icon={faXmark} />
+                        <FontAwesomeIcon className='fa-2xl' icon={faXmark} />
+                        
                     </div>
                     
                 </div>

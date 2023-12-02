@@ -37,13 +37,11 @@ export const WeatherDetailsPage = () => {
             <div className="weather-details__main">
                 <div className="weather-details-forecast">
                     <div className='forecast__head'>
-                            <div className='forecast__head-switch'>
-                                <p>Hourly Forecast</p>
-                                <Link to={'/'} className='forecast__head-switch-a'>
-                                    <FontAwesomeIcon icon={faCaretDown}/>
-                                    <span>Close Full Report</span>
-                                </Link>
-                            </div>
+                        <div className='forecast__head-switch'>
+                            <Link to={'/'} className='forecast__head-switch-a'>
+                                <FontAwesomeIcon icon={faCaretDown} className="fa-lg"/>
+                            </Link>
+                        </div>
                         
                             <div className='forecast__head-separator'></div>
                     </div>
