@@ -1,13 +1,10 @@
-import { addToSavedCity } from '../../store/actions/addToSavedCitiesAction';
 import './cityCard.style.css'
 import {useDispatch, useSelector } from "react-redux";
-import plus from '../../images/plus.png'
 
 export const CityCard = () => {
     const dispatch = useDispatch();
     const weather = useSelector(state =>  state.weatherReducer?.weather); 
 
-    // let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return (
         <div className="card ">
             <div className="card_container">

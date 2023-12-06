@@ -23,14 +23,15 @@ export const Forecast = () => {
       0:    { items:  3},
       360:  { items:  4 },
       660:  { items: 5 },
-      800:  { items: 7 },
-      880:  { items: 8 },
-      1100: { items: 9 },
-      1320: { items: 9 },
-      2000: { items: 9 } 
+    //   800:  { items: 7 },
+    //   880:  { items: 8 },
+    //   1100: { items: 9 },
+    //   1320: { items: 9 },
+    //   2000: { items: 9 } 
     };
 
-    let color = (JSON.parse(localStorage.savedCity).includes(store.getState()?.weatherReducer?.forecast?.city?.name)) ? '#362a84' : 'white';
+    let color = (JSON.parse(localStorage.savedCity).includes(store.getState()?.weatherReducer?.forecast?.city?.name)) 
+        ? (store.getState()?.weatherReducer?.theme ==='dark' ?  '#5B63B7' : '#362a84') : 'white';
 
     const isCitySaved = (city) => {
         if ((JSON.parse(localStorage.savedCity).includes(city)))  {

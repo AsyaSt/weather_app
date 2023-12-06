@@ -1,5 +1,4 @@
 .weather-details-page {
-    /* padding: 30px; */
     height: auto;
     position: relative;
 }
@@ -28,11 +27,7 @@
 .weather-details-forecast {
     height: auto;
     width: 100%;
-    /* padding-bottom: 36px; */
-    /* background: linear-gradient(167.57deg, rgba(46, 51, 90, 0.26) -4.68%, rgba(28, 27, 51, 0.26) 95.45%); */
     box-shadow: inset 0px 1px 0px #ffffff6f;
-    /* backdrop-filter: blur(25px); */
-    /* border-radius: 44px; */
 }
 
 .weather-details__main {

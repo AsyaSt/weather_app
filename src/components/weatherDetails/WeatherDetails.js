@@ -9,11 +9,18 @@ import { WeatherSunrise } from './WeatherSunrise';
 const WeatherDetailsItem = ({icon, detailName, detailInfo}) => {
     return(
         <div className='weather-detail'>
-            <div className='weather-detail__name'>
-                <FontAwesomeIcon icon={icon}  />
-                <p>{detailName}</p>
+            <div className='z'>
+                <div className="weather-detail-shadow"/>
+                <div className="weather-detail-shadow2"/>
             </div>
-            <p className='weather-detail__info'>{detailInfo}</p> 
+            <div>
+                <div className='weather-detail__name'>
+                    <FontAwesomeIcon icon={icon}  />
+                    <p>{detailName}</p>
+                </div>
+                <p className='weather-detail__info'>{detailInfo}</p> 
+            </div>
+
         </div>
     )
 }

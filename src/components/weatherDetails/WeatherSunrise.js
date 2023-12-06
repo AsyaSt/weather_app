@@ -2,6 +2,13 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
 
+let getsunset = (time, timezone) => {
+    let newDate = new Date(time * 1000);
+    let s = newDate.setMinutes(newDate.getMinutes() + newDate.getTimezoneOffset() + (timezone/60))
+    return new Date(s);
+}
+
+
 export const WeatherSunrise = () => {
     const weather = useSelector(state =>  state.weatherReducer.weather); 
     return (
@@ -13,7 +20,7 @@ export const WeatherSunrise = () => {
                 </div>
 
                 <p className='weather-detail__info'>
-                    {new Date(weather?.sys?.sunrise * 1000).getHours()}:{new Date(weather?.sys?.sunrise * 1000).getMinutes()} AM
+                    {getsunset(weather?.sys?.sunrise, weather?.timezone).getHours()}:{getsunset(weather?.sys?.sunrise, weather?.timezone).getMinutes()} AM
                 </p> 
             </div>
             <div>
@@ -23,9 +30,11 @@ export const WeatherSunrise = () => {
                 </div>
 
                 <p className='weather-detail__info'>
-                {new Date(weather?.sys?.sunset * 1000).getHours()}:{new Date(weather?.sys?.sunset * 1000).getMinutes()} PM
+                {getsunset(weather?.sys?.sunset, weather?.timezone).getHours()}:{getsunset(weather?.sys?.sunset, weather?.timezone).getMinutes()} PM
                 </p> 
             </div>
+            <div className="weather-detail-shadow"></div>
+            <div className="weather-detail-shadow2"></div>
         </div>
     )
 }

@@ -16,11 +16,11 @@ export const WeatherDetailsPage = () => {
         0:    { items:  3},
         360:  { items:  4 },
         660:  { items: 5 },
-        800:  { items: 7 },
-        880:  { items: 8 },
-        1100: { items: 9 },
-        1320: { items: 9 },
-        2000: { items: 9 } 
+        // 800:  { items: 7 },
+        // 880:  { items: 8 },
+        // 1100: { items: 9 },
+        // 1320: { items: 9 },
+        // 2000: { items: 9 } 
     };
 
     const weekForecast = useSelector(state =>  state?.weatherReducer?.forecast?.list);

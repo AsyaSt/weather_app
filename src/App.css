@@ -1,26 +1,13 @@
 body{
   --tw-bg-opacity: 1;
     background-color: rgb(243 244 246/var(--tw-bg-opacity));
+    max-width: 450px;
+    min-width: 300px;
 }
 
 .App{
   position: relative;
+  max-width: 450px;
+  min-width: 300px;
 }
 
-
-.app_info_inner{
-  /* height: 100%;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  position: relative; */
-}
-
-@media (max-width: 800px) { 
-  .App{
-    /* flex-direction: column; */
-  }
-  .app_info_inner{
-    /* width: 100%; */
-  }
-}

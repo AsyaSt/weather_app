@@ -8,14 +8,15 @@ export const WeatherAQI = () => {
     const [aqiDetail, setAqiDetail] = useState('aqi');
 
     return (
-         <div className='weather-detail'>
+         <div className='weather-detail aqi'>
             <div className='weather-detail__name'>
                 <FontAwesomeIcon icon={faLungs}  />
                 <p>Air Quality</p>
             </div>
+            
             {
                 aqiDetail === 'aqi' ? 
-                <>
+                <div>
                     <p className='weather-detail__info'>{aqi?.main?.aqi + ' - Moderate' } </p> 
                     <div className='range-aqi'>
                         <div className='range-aqi-dot' style={{left: aqi?.main?.aqi * 100 / 6 +'%'}}> </div>
@@ -25,9 +26,9 @@ export const WeatherAQI = () => {
                         <p>See more</p>
                         <FontAwesomeIcon icon={faChevronRight} opacity={0.4}/>
                     </div>
-                </>
+                </div>
                 : 
-                <>
+                <div>
 
                     <div className='aqi-details'>
                        {Object.keys( aqi?.components).map(element => <p>{element} :  {aqi?.components[element]}</p>)}
@@ -37,8 +38,11 @@ export const WeatherAQI = () => {
                         <FontAwesomeIcon icon={faChevronLeft} opacity={0.4}/>
                         <p>Back to AQI</p> 
                     </div>
-                </>
+                </div>
             }
+
+            <div className="weather-detail-shadow"></div>
+            <div className="weather-detail-shadow2"></div>
         </div>
     )
 }

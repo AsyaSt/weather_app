@@ -19,6 +19,8 @@ export const WeatherWind = () => {
 
                 <div className='weather-detail__wind-info'>{weather?.wind?.speed} <br/> m/s</div>
             </div>
+            <div className="weather-detail-shadow"></div>
+            <div className="weather-detail-shadow2"></div>
         
         </div>
     )

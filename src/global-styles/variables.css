@@ -1,0 +1,14 @@
+:root {
+    --saved-city-light-color:  linear-gradient(90deg, #5a36b4 0%, #362a84 103.55%);
+    --saved-city-shadow1-light-color: linear-gradient(90deg, #4936b48a 0%, #7b72b2ee 103.55%);
+    --saved-city-shadow2-light-color: linear-gradient(90deg, #4936b432 0%, #6f60ceee 103.55%);
+
+    --forecast-item-color: rgb(72 49 157);
+    --forecast-item-dark-color:#5B63B7;
+
+    --saved-city-dark-color:  linear-gradient(90deg, #9296F0 0%, #5B63B7 103.55%);
+    --saved-city-shadow1-dark-color: #5B63B747;
+    --saved-city-shadow2-dark-color: #5B63B79d;
+
+    --bookmark-color: ;
+  }

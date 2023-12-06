@@ -90,7 +90,8 @@ export function* handleGetWeatherByCoords(action) {
         const response = yield call(() => requestGetWeatherByCoords(action.lat, action.lon));
         const {data} = response;
         const cityName = {city: data[0].name};
-        yield (handleGetWeather(cityName))
+        yield (handleGetWeather(cityName));
+        yield handleGetForecast(cityName);
     } catch(error) {
         console.log(error);
     }
